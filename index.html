@@ -27,144 +27,45 @@
     <meta name="twitter:description" content="VIN NESIA menyediakan kumpulan tools online gratis dan bermanfaat seperti HTML, CSS, JSON Beautifier/Minifier, Markdown to HTML Converter, dan HTML Entity Encoder/Decoder. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
     <meta name="twitter:image" content="https://placehold.co/1200x675/8B5CF6/ffffff?text=VIN+NESIA+Tools"> <!-- Placeholder untuk gambar Twitter Card -->
 
-    <!-- Memuat Tailwind CSS dari CDN untuk styling yang cepat dan responsif -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Mengatur font Inter sebagai font utama untuk tampilan yang bersih -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-        /* Mengatur font Inter untuk seluruh halaman dan tema elegan ungu kehitaman */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1E212B; /* Latar belakang sangat gelap, dengan hint biru/ungu */
-            color: #E0E6F0; /* Warna teks off-white yang lembut */
-        }
-        /* Styling tambahan untuk link agar terlihat seperti tombol */
-        .btn-link {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #8B5CF6; /* Ungu yang lebih vibrant dan elegan */
-            color: white;
-            border-radius: 0.5rem; /* Sudut membulat */
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
-        }
-        .btn-link:hover {
-            background-color: #7C3AED; /* Ungu yang sedikit lebih gelap saat hover */
-        }
-        /* Styling untuk kartu tools */
-        .tool-card {
-            background-color: #2A2F3B; /* Latar belakang abu-abu gelap untuk kartu, sedikit lebih terang dari body */
-            border-radius: 0.75rem; /* Sudut membulat lebih besar */
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih menonjol */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .tool-card:hover {
-            transform: translateY(-5px); /* Efek sedikit naik saat hover */
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
-        }
-        /* Styling untuk logo teks */
-        .logo-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800; /* Extra bold */
-            color: #C4B5FD; /* Ungu terang untuk teks logo */
-            font-size: 1.875rem; /* text-3xl */
-            line-height: 2.25rem; /* leading-9 */
-        }
-        /* Styling untuk ikon/gambar logo */
-        .logo-img {
-            width: 40px; /* Lebar gambar logo */
-            height: 40px; /* Tinggi gambar logo */
-            margin-right: 0.75rem; /* Jarak antara logo dan teks */
-            border-radius: 0.375rem; /* Sedikit membulat pada logo gambar */
-        }
-        /* Styling untuk link navigasi di footer/informasi penting */
-        .nav-link {
-            color: #A78BFA; /* Ungu sedang untuk link */
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #C4B5FD; /* Ungu terang saat hover */
-        }
-        /* Styling untuk bagian FAQ */
-        .faq-item {
-            background-color: #2A2F3B;
-            border-radius: 0.5rem;
-            padding: 1rem 1.5rem;
-            margin-bottom: 0.75rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .faq-question {
-            font-weight: 600;
-            color: #C4B5FD;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-answer {
-            color: #E0E6F0;
-            margin-top: 0.5rem;
-            display: none; /* Sembunyikan secara default */
-        }
-        .faq-answer.active {
-            display: block; /* Tampilkan jika aktif */
-        }
-        .faq-icon {
-            transition: transform 0.3s ease;
-        }
-        .faq-question.active .faq-icon {
-            transform: rotate(180deg);
-        }
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-        /* Styling untuk bagian konten yang bisa di-toggle (untuk halaman About, Terms, dll. jika ditampilkan di homepage) */
-        .content-section {
-            display: none; /* Sembunyikan secara default */
-            background-color: #2A2F3B; /* Sama dengan warna kartu */
-            padding: 2rem;
-            border-radius: 0.75rem;
-            margin-top: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .content-section.active {
-            display: block; /* Tampilkan jika aktif */
-        }
-    </style>
-    <!-- JSON-LD Structured Data untuk Google Search, membantu mesin pencari memahami konten situs Anda -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "VIN NESIA",
-      "url": "https://www.vinnesia.my.id/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://www.vinnesia.my.id/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "description": "Kumpulan tools online gratis dan bermanfaat seperti HTML, CSS, JSON Beautifier/Minifier, Markdown to HTML Converter, dan HTML Entity Encoder/Decoder. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "VIN NESIA",
-        "url": "https://www.vinnesia.my.id/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://placehold.co/40x40/8B5CF6/ffffff?text=VN" /* URL logo gambar Anda */
-        }
-      }
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"VIN NESIA",
+  "url":"https://www.vinnesia.my.id/",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://www.vinnesia.my.id/?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  },
+  "description":"Kumpulan tools online gratis dan bermanfaat seperti HTML, CSS, JSON Beautifier/Minifier, Markdown to HTML Converter, dan HTML Entity Encoder/Decoder. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.",
+  "publisher":{
+    "@type":"Organization",
+    "name":"VIN NESIA",
+    "url":"https://www.vinnesia.my.id/",
+    "logo":{
+      "@type":"ImageObject",
+      "url":"https://placehold.co/40x40/8B5CF6/ffffff?text=VN"
     }
-    </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8V8Y4XQN4"></script>
+  }
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8KPNLX47L1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8KPNLX47L1');
 </script>
 </head>
@@ -297,14 +198,14 @@
             </p>
             <div class="flex flex-col items-center gap-3">
                 <!-- Email -->
-<a href="mailto:vin.nesiaa.id@gmail.com" 
-   class="nav-link flex items-center gap-2 text-base text-gray-700 hover:text-blue-600 transition duration-300">
+<a href="mailto:vin.nesiaa.id@gmail.com"
+   class="nav-link flex items-center gap-2 text-base text-purple-300 hover:text-purple-400 transition duration-300">
    📧 <span>Email: vin.nesiaa.id@gmail.com</span>
 </a>
 
 <!-- Instagram -->
-<a href="https://www.instagram.com/Vin.nesia.id" target="_blank" 
-   class="nav-link flex items-center gap-2 text-base text-gray-700 hover:text-pink-500 transition duration-300">
+<a href="https://www.instagram.com/Vin.nesia.id" target="_blank"
+   class="nav-link flex items-center gap-2 text-base text-pink-300 hover:text-pink-400 transition duration-300">
    📸 <span>Instagram: @Vin.nesia.id</span>
 </a>
             </div>
