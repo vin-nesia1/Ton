@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS, JSON Beautifier/Minifier - VIN NESIA Tools</title>
+    <meta name="description" content="Beautify dan minify kode HTML, CSS, dan JSON Anda secara gratis dengan tool online VIN NESIA. Optimalkan keterbacaan dan performa kode.">
+    <meta name="keywords" content="html beautifier, css beautifier, json beautifier, html minifier, css minifier, json minifier, code formatter, code optimizer, online tool">
+    <link rel="canonical" href="https://toolsvin.vinnesia.my.id/beautifier.html">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CDN untuk js-beautify (digunakan untuk HTML, CSS, JavaScript) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify-html.min.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1E212B; color: #E0E6F0; }
+        .btn-tool {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            background-color: #8B5CF6;
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            margin: 0.25rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-tool:hover { background-color: #7C3AED; }
+        .logo-text { font-family: 'Inter', sans-serif; font-weight: 800; color: #C4B5FD; font-size: 1.875rem; line-height: 2.25rem; }
+        .logo-img { width: 40px; height: 40px; margin-right: 0.75rem; border-radius: 0.375rem; }
+        .nav-link { color: #A78BFA; transition: color 0.3s ease; }
+        .nav-link:hover { color: #C4B5FD; }
+        textarea {
+            background-color: #2A2F3B;
+            border: 1px solid #4A5568;
+            color: #E0E6F0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            resize: vertical;
+            font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        select {
+            background-color: #2A2F3B;
+            border: 1px solid #4A5568;
+            color: #E0E6F0;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="flex items-center justify-start mb-8 md:mb-12">
+            <a href="https://www.vinnesia.my.id" class="flex items-center hover:opacity-80 transition duration-300">
+                <img src="https://placehold.co/40x40/8B5CF6/ffffff?text=VN" alt="Logo VIN NESIA" class="logo-img">
+                <span class="logo-text">VIN NESIA</span>
+            </a>
+        </header>
+
+        <main class="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 text-center">HTML, CSS, JSON Beautifier / Minifier</h1>
+            <p class="text-gray-300 mb-6 text-center">Rapikan atau kompres kode Anda untuk keterbacaan dan performa yang lebih baik.</p>
+
+            <div class="mb-4">
+                <label for="inputType" class="block text-gray-400 text-sm font-bold mb-2">Pilih Tipe Kode:</label>
+                <select id="inputType" class="w-full md:w-auto">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="json">JSON</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="inputCode" class="block text-gray-400 text-sm font-bold mb-2">Kode Input:</label>
+                    <textarea id="inputCode" rows="15" class="w-full" placeholder="Masukkan kode HTML, CSS, atau JSON di sini..."></textarea>
+                </div>
+                <div>
+                    <label for="outputCode" class="block text-gray-400 text-sm font-bold mb-2">Kode Output:</label>
+                    <textarea id="outputCode" rows="15" class="w-full" readonly placeholder="Output kode akan muncul di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center mt-6">
+                <button id="beautifyBtn" class="btn-tool">Beautify</button>
+                <button id="minifyBtn" class="btn-tool">Minify</button>
+                <button id="clearBtn" class="btn-tool bg-red-600 hover:bg-red-700">Clear</button>
+                <button id="copyBtn" class="btn-tool bg-blue-600 hover:bg-blue-700">Copy Output</button>
+            </div>
+        </main>
+
+        <footer class="text-center py-8 bg-gray-800 p-6 rounded-xl shadow-lg mt-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6">Hubungi Kami</h2>
+            <p class="text-lg text-gray-300 mb-4">
+                Jika Anda memiliki pertanyaan, masukan, atau ingin berkolaborasi, jangan ragu untuk menghubungi kami melalui:
+            </p>
+            <div class="flex flex-col items-center gap-3">
+                <a href="mailto:vin.nesiaa.id@gmail.com" class="nav-link font-medium text-xl transition duration-300">
+                    Email: vin.nesiaa.id@gmail.com
+                </a>
+                <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" class="nav-link font-medium text-xl transition duration-300">
+                    Instagram: @Vin.nesia.id
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm mt-8">&copy; 2025 VIN NESIA. Semua Hak Dilindungi.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputCode = document.getElementById('inputCode');
+            const outputCode = document.getElementById('outputCode');
+            const inputType = document.getElementById('inputType');
+            const beautifyBtn = document.getElementById('beautifyBtn');
+            const minifyBtn = document.getElementById('minifyBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const copyBtn = document.getElementById('copyBtn');
+
+            // Fungsi untuk menampilkan pesan sementara (pengganti alert)
+            function showMessage(message, type = 'info') {
+                const messageBox = document.createElement('div');
+                messageBox.textContent = message;
+                messageBox.className = `fixed bottom-4 right-4 p-3 rounded-lg shadow-lg text-white z-50`;
+                if (type === 'success') {
+                    messageBox.classList.add('bg-green-500');
+                } else if (type === 'error') {
+                    messageBox.classList.add('bg-red-500');
+                } else {
+                    messageBox.classList.add('bg-blue-500');
+                }
+                document.body.appendChild(messageBox);
+                setTimeout(() => {
+                    messageBox.remove();
+                }, 3000);
+            }
+
+            beautifyBtn.addEventListener('click', () => {
+                const code = inputCode.value;
+                const type = inputType.value;
+                let formattedCode = '';
+
+                try {
+                    if (type === 'html') {
+                        formattedCode = html_beautify(code, { indent_size: 2 });
+                    } else if (type === 'css') {
+                        formattedCode = css_beautify(code, { indent_size: 2 });
+                    } else if (type === 'json') {
+                        formattedCode = JSON.stringify(JSON.parse(code), null, 2);
+                    }
+                    outputCode.value = formattedCode;
+                } catch (e) {
+                    showMessage('Error: Invalid ' + type.toUpperCase() + ' code. ' + e.message, 'error');
+                }
+            });
+
+            minifyBtn.addEventListener('click', () => {
+                const code = inputCode.value;
+                const type = inputType.value;
+                let minifiedCode = '';
+
+                try {
+                    if (type === 'html') {
+                        // Minify HTML: remove comments, extra spaces, newlines
+                        minifiedCode = code.replace(/<!--[\s\S]*?-->/g, '') // Remove HTML comments
+                                           .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+                                           .replace(/>\s*</g, '><') // Remove spaces between tags
+                                           .trim();
+                    } else if (type === 'css') {
+                        // Minify CSS: remove comments, newlines, extra spaces
+                        minifiedCode = code.replace(/\/\*[\s\S]*?\*\//g, '') // Remove CSS comments
+                                           .replace(/\s*([{}|:;,])\s*/g, '$1') // Remove spaces around braces, colons, semicolons, commas
+                                           .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+                                           .trim();
+                    } else if (type === 'json') {
+                        minifiedCode = JSON.stringify(JSON.parse(code));
+                    }
+                    outputCode.value = minifiedCode;
+                } catch (e) {
+                    showMessage('Error: Invalid ' + type.toUpperCase() + ' code. ' + e.message, 'error');
+                }
+            });
+
+            clearBtn.addEventListener('click', () => {
+                inputCode.value = '';
+                outputCode.value = '';
+                showMessage('Text areas cleared!', 'info');
+            });
+
+            copyBtn.addEventListener('click', () => {
+                if (outputCode.value) {
+                    outputCode.select();
+                    document.execCommand('copy'); // Fallback for navigator.clipboard.writeText
+                    showMessage('Output code copied to clipboard!', 'success');
+                } else {
+                    showMessage('No code to copy!', 'info');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
