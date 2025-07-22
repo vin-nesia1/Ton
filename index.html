@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIN NESIA - Kumpulan Tools Online Gratis & Bermanfaat | Beautifier, Converter, Encoder</title>
+    <title>Vinnesia - Kumpulan Tools Online Gratis & Bermanfaat | Konversi Mata Uang, QR Code</title>
     <!-- Meta Deskripsi: Penting untuk SEO, menjelaskan isi situs secara singkat dan menarik -->
-    <meta name="description" content="VIN NESIA menyediakan kumpulan tools online gratis dan bermanfaat seperti HTML, CSS, JSON Beautifier/Minifier, Markdown to HTML Converter, dan HTML Entity Encoder/Decoder. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
-    <!-- Meta Keywords: Kata kunci relevan untuk mesin pencari -->
-    <meta name="keywords" content="tools online gratis, html beautifier, css minifier, json formatter, markdown to html, html entity encoder, html entity decoder, tools programmer, utilitas web, vin nesia">
+    <meta name="description" content="Vinnesia menyediakan kumpulan tools online gratis dan bermanfaat seperti Konversi Mata Uang, Pembuat QR Code, dan banyak lagi. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
+    <!-- Meta Keywords: Meskipun tidak sekuat dulu, masih bisa membantu mesin pencari memahami konteks situs -->
+    <meta name="keywords" content="tools online gratis, konversi mata uang, pembuat qr code, qr code generator, currency converter, tools digital, utilitas online, vinnesia">
     <!-- Canonical URL: Mencegah masalah konten duplikat, mengarahkan ke URL utama situs -->
-    <link rel="canonical" href="https://www.vinnesia.my.id/">
+    <link rel="canonical" href="https://vinnesia.my.id/">
     <!-- Hreflang: Menunjukkan bahasa konten, penting untuk SEO internasional -->
-    <link rel="alternate" href="https://www.vinnesia.my.id/" hreflang="id-ID" />
-    <link rel="alternate" href="https://www.vinnesia.my.id/" hreflang="x-default" />
+    <link rel="alternate" href="https://vinnesia.my.id/" hreflang="id-ID" />
+    <link rel="alternate" href="https://vinnesia.my.id/" hreflang="x-default" />
 
     <!-- Open Graph Tags untuk berbagi di media sosial (Facebook, LinkedIn, dll.) -->
-    <meta property="og:title" content="VIN NESIA - Kumpulan Tools Online Gratis & Bermanfaat">
-    <meta property="og:description" content="VIN NESIA menyediakan kumpulan tools online gratis dan bermanfaat seperti HTML, CSS, JSON Beautifier/Minifier, Markdown to HTML Converter, dan HTML Entity Encoder/Decoder. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
-    <meta property="og:url" content="https://www.vinnesia.my.id/">
+    <meta property="og:title" content="Vinnesia - Kumpulan Tools Online Gratis & Bermanfaat">
+    <meta property="og:description" content="Vinnesia menyediakan kumpulan tools online gratis dan bermanfaat seperti Konversi Mata Uang, Pembuat QR Code, dan banyak lagi. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
+    <meta property="og:url" content="https://vinnesia.my.id/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://placehold.co/1200x630/8B5CF6/ffffff?text=VIN+NESIA+Tools"> <!-- Placeholder untuk gambar OG -->
+    <!-- Anda bisa menambahkan og:image jika ada logo atau gambar utama situs -->
+    <!-- Contoh: <meta property="og:image" content="https://vinnesia.my.id/logo_vinnesia.jpg"> -->
 
     <!-- Twitter Card Tags untuk berbagi di Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VIN NESIA - Kumpulan Tools Online Gratis & Bermanfaat">
-    <meta name="twitter:description" content="VIN NESIA menyediakan kumpulan tools online gratis dan bermanfaat seperti HTML, CSS, JSON Beautifier/Minifier, Markdown to HTML Converter, dan HTML Entity Encoder/Decoder. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
-    <meta name="twitter:image" content="https://placehold.co/1200x675/8B5CF6/ffffff?text=VIN+NESIA+Tools"> <!-- Placeholder untuk gambar Twitter Card -->
+    <meta name="twitter:title" content="Vinnesia - Kumpulan Tools Online Gratis & Bermanfaat">
+    <meta name="twitter:description" content="Vinnesia menyediakan kumpulan tools online gratis dan bermanfaat seperti Konversi Mata Uang, Pembuat QR Code, dan banyak lagi. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
+    <!-- Contoh: <meta name="twitter:image" content="https://vinnesia.my.id/logo_vinnesia.jpg"> -->
 
     <!-- Memuat Tailwind CSS dari CDN untuk styling yang cepat dan responsif -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -34,123 +35,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        /* Mengatur font Inter untuk seluruh halaman dan tema elegan ungu kehitaman */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1E212B; /* Latar belakang sangat gelap, dengan hint biru/ungu */
-            color: #E0E6F0; /* Warna teks off-white yang lembut */
-        }
-        /* Styling tambahan untuk link agar terlihat seperti tombol */
-        .btn-link {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #8B5CF6; /* Ungu yang lebih vibrant dan elegan */
-            color: white;
-            border-radius: 0.5rem; /* Sudut membulat */
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
-        }
-        .btn-link:hover {
-            background-color: #7C3AED; /* Ungu yang sedikit lebih gelap saat hover */
-        }
-        /* Styling untuk kartu tools */
-        .tool-card {
-            background-color: #2A2F3B; /* Latar belakang abu-abu gelap untuk kartu, sedikit lebih terang dari body */
-            border-radius: 0.75rem; /* Sudut membulat lebih besar */
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih menonjol */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .tool-card:hover {
-            transform: translateY(-5px); /* Efek sedikit naik saat hover */
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
-        }
-        /* Styling untuk logo teks */
-        .logo-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800; /* Extra bold */
-            color: #C4B5FD; /* Ungu terang untuk teks logo */
-            font-size: 1.875rem; /* text-3xl */
-            line-height: 2.25rem; /* leading-9 */
-        }
-        /* Styling untuk ikon/gambar logo */
-        .logo-img {
-            width: 40px; /* Lebar gambar logo */
-            height: 40px; /* Tinggi gambar logo */
-            margin-right: 0.75rem; /* Jarak antara logo dan teks */
-            border-radius: 0.375rem; /* Sedikit membulat pada logo gambar */
-        }
-        /* Styling untuk link navigasi di footer/informasi penting */
-        .nav-link {
-            color: #A78BFA; /* Ungu sedang untuk link */
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #C4B5FD; /* Ungu terang saat hover */
-        }
-        /* Styling untuk bagian FAQ */
-        .faq-item {
-            background-color: #2A2F3B;
-            border-radius: 0.5rem;
-            padding: 1rem 1.5rem;
-            margin-bottom: 0.75rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .faq-question {
-            font-weight: 600;
-            color: #C4B5FD;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-answer {
-            color: #E0E6F0;
-            margin-top: 0.5rem;
-            display: none; /* Sembunyikan secara default */
-        }
-        .faq-answer.active {
-            display: block; /* Tampilkan jika aktif */
-        }
-        .faq-icon {
-            transition: transform 0.3s ease;
-        }
-        .faq-question.active .faq-icon {
-            transform: rotate(180deg);
-        }
+    <!-- Menghubungkan ke file CSS eksternal Anda -->
+    <link rel="stylesheet" href="style.css">
 
-        /* Styling untuk bagian konten yang bisa di-toggle (untuk halaman About, Terms, dll. jika ditampilkan di homepage) */
-        .content-section {
-            display: none; /* Sembunyikan secara default */
-            background-color: #2A2F3B; /* Sama dengan warna kartu */
-            padding: 2rem;
-            border-radius: 0.75rem;
-            margin-top: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        }
-        .content-section.active {
-            display: block; /* Tampilkan jika aktif */
-        }
-    </style>
     <!-- JSON-LD Structured Data untuk Google Search, membantu mesin pencari memahami konten situs Anda -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "VIN NESIA",
-      "url": "https://www.vinnesia.my.id/",
+      "name": "Vinnesia",
+      "url": "https://vinnesia.my.id/",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.vinnesia.my.id/?q={search_term_string}",
+        "target": "https://vinnesia.my.id/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
-      "description": "Kumpulan tools online gratis dan bermanfaat seperti HTML, CSS, JSON Beautifier/Minifier, Markdown to HTML Converter, dan HTML Entity Encoder/Decoder. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.",
+      "description": "Kumpulan tools online gratis dan bermanfaat seperti Konversi Mata Uang, Pembuat QR Code, dan banyak lagi. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.",
       "publisher": {
         "@type": "Organization",
-        "name": "VIN NESIA",
-        "url": "https://www.vinnesia.my.id/",
+        "name": "Vinnesia",
+        "url": "https://vinnesia.my.id/",
         "logo": {
           "@type": "ImageObject",
           "url": "https://placehold.co/40x40/8B5CF6/ffffff?text=VN" /* URL logo gambar Anda */
@@ -166,30 +70,30 @@
         <!-- Bagian Header dengan Logo dan Nama Situs -->
         <header class="flex items-center justify-start mb-8 md:mb-12">
             <!-- Logo dan Nama Situs di pojok kiri atas -->
-            <a href="https://www.vinnesia.my.id" class="flex items-center hover:opacity-80 transition duration-300">
+            <a href="#" class="flex items-center hover:opacity-80 transition duration-300">
                 <!-- Logo Gambar "VN" -->
-                <img src="https://placehold.co/40x40/8B5CF6/ffffff?text=VN" alt="Logo VIN NESIA" class="logo-img">
+                <img src="https://placehold.co/40x40/8B5CF6/ffffff?text=VN" alt="Logo Vinnesia" class="logo-img">
                 <!-- Nama Situs -->
-                <span class="logo-text">VIN NESIA</span>
+                <span class="logo-text">Vinnesia</span>
             </a>
         </header>
 
         <!-- Bagian Selamat Datang & Pengantar -->
         <section class="text-center mb-12 bg-gray-800 p-6 rounded-xl shadow-lg">
             <h1 class="text-4xl md:text-5xl font-extrabold text-purple-400 mb-4 leading-tight">
-                Selamat Datang di VIN NESIA
+                Selamat Datang di Vinnesia
             </h1>
             <p class="text-lg md:text-xl text-gray-300 mb-4">
                 Kumpulan <span class="font-semibold text-purple-300">tools online gratis dan bermanfaat</span> yang dirancang untuk memudahkan berbagai keperluan digital Anda.
             </p>
             <p class="text-md md:text-lg text-gray-400 text-justify">
-                Selamat datang di VIN NESIA, sebuah platform inovatif yang didedikasikan untuk menyediakan kumpulan *tools* *online* gratis dan bermanfaat bagi siapa saja, di mana saja. Di era digital yang serba cepat ini, kami memahami bahwa efisiensi adalah kunci. Baik Anda seorang programmer yang membutuhkan solusi cepat untuk mengelola kode, seorang penulis yang ingin mengonversi dokumen, atau individu yang sekadar ingin menyederhanakan tugas sehari-hari, VIN NESIA hadir sebagai jawaban. Kami percaya bahwa akses terhadap teknologi yang mempermudah hidup tidak seharusnya dibatasi oleh biaya atau kerumitan. Oleh karena itu, setiap *tool* yang kami kembangkan di VIN NESIA dirancang dengan filosofi 'cepat, ringan, dan tanpa biaya'. Kami ingin memastikan bahwa setiap pengguna dapat dengan mudah mengakses dan memanfaatkan fitur-fiturnya tanpa hambatan.
+                Selamat datang di Vinnesia, sebuah platform inovatif yang didedikasikan untuk menyediakan kumpulan *tools* *online* gratis dan bermanfaat bagi siapa saja, di mana saja. Di era digital yang serba cepat ini, kami memahami bahwa efisiensi adalah kunci. Baik Anda seorang profesional yang membutuhkan solusi cepat, pelajar yang mencari alat bantu praktis, atau individu yang sekadar ingin menyederhanakan tugas sehari-hari, Vinnesia hadir sebagai jawaban. Kami percaya bahwa akses terhadap teknologi yang mempermudah hidup tidak seharusnya dibatasi oleh biaya atau kerumitan. Oleh karena itu, setiap *tool* yang kami kembangkan di Vinnesia dirancang dengan filosofi 'cepat, ringan, dan tanpa biaya'. Kami ingin memastikan bahwa setiap pengguna dapat dengan mudah mengakses dan memanfaatkan fitur-fiturnya tanpa hambatan.
             </p>
             <p class="text-md md:text-lg text-gray-400 mt-4 text-justify">
-                VIN NESIA bukan hanya sekadar kumpulan *tools*; ini adalah komitmen kami untuk memberdayakan komunitas global dengan solusi digital yang dapat diandalkan. Kami mengerti bahwa privasi dan keamanan data adalah prioritas utama, sehingga kami selalu berupaya untuk menjaga integritas data Anda sambil tetap memberikan layanan terbaik. Dengan pemantauan analitik yang cermat, kami terus-menerus mengidentifikasi area untuk perbaikan dan penambahan fitur baru, memastikan VIN NESIA selalu relevan dan memenuhi kebutuhan Anda yang terus berkembang. Seluruh layanan kami berjalan di subdomain khusus, memungkinkan setiap *tool* beroperasi secara independen dengan performa optimal, menjamin pengalaman pengguna yang lancar dan responsif.
+                Vinnesia bukan hanya sekadar kumpulan *tools*; ini adalah komitmen kami untuk memberdayakan komunitas global dengan solusi digital yang dapat diandalkan. Kami mengerti bahwa privasi dan keamanan data adalah prioritas utama, sehingga kami selalu berupaya untuk menjaga integritas data Anda sambil tetap memberikan layanan terbaik. Dengan pemantauan analitik yang cermat, kami terus-menerus mengidentifikasi area untuk perbaikan dan penambahan fitur baru, memastikan Vinnesia selalu relevan dan memenuhi kebutuhan Anda yang terus berkembang. Seluruh layanan kami berjalan di subdomain khusus, memungkinkan setiap *tool* beroperasi secara independen dengan performa optimal, menjamin pengalaman pengguna yang lancar dan responsif.
             </p>
             <p class="text-md md:text-lg text-gray-400 mt-4 text-justify">
-                Kami bangga mempersembahkan *tools* yang tidak hanya fungsional tetapi juga intuitif dan mudah digunakan. Dari membantu Anda mengelola keuangan pribadi dengan konversi mata uang hingga memfasilitasi komunikasi modern melalui pembuatan QR Code, VIN NESIA berupaya menjadi mitra digital Anda. Kami mengundang Anda untuk menjelajahi berbagai *tool* yang telah kami sediakan dan menantikan *tool-tool* baru yang akan segera hadir. Bergabunglah dengan ribuan pengguna lainnya yang telah merasakan manfaat VIN NESIA, dan mari bersama-sama menjadikan dunia digital lebih mudah diakses dan lebih produktif.
+                Kami bangga mempersembahkan *tools* yang tidak hanya fungsional tetapi juga intuitif dan mudah digunakan. Dari membantu Anda mengelola keuangan pribadi dengan konversi mata uang hingga memfasilitasi komunikasi modern melalui pembuatan QR Code, Vinnesia berupaya menjadi mitra digital Anda. Kami mengundang Anda untuk menjelajahi berbagai *tool* yang telah kami sediakan dan menantikan *tool-tool* baru yang akan segera hadir. Bergabunglah dengan ribuan pengguna lainnya yang telah merasakan manfaat Vinnesia, dan mari bersama-sama menjadikan dunia digital lebih mudah diakses dan lebih produktif.
             </p>
         </section>
 
@@ -197,87 +101,114 @@
         <section class="mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-400 mb-8">Tools Kami</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Kartu Tool: HTML, CSS, JSON Beautifier/Minifier -->
+                <!-- Kartu Tool: Konversi Mata Uang -->
                 <div class="tool-card">
-                    <h3 class="text-2xl font-semibold text-purple-300 mb-3">HTML, CSS, JSON Beautifier/Minifier</h3>
-                    <p class="text-gray-300 mb-4">Optimalkan kode Anda dengan mudah menggunakan tool ini. Fungsi beautifier akan merapikan dan membuat kode Anda lebih mudah dibaca, sementara minifier akan mengompresnya untuk mempercepat waktu muat situs Anda. Ideal untuk pengembang web yang ingin menjaga kebersihan dan efisiensi kode.</p>
-                    <a href="https://toolsvin.vinnesia.my.id/beautifier.html" target="_blank" class="btn-link">
+                    <h3 class="text-2xl font-semibold text-purple-300 mb-3">Konversi Mata Uang</h3>
+                    <p class="text-gray-300 mb-4">Tool Konversi Mata Uang kami memungkinkan Anda mengubah nilai mata uang global secara instan dan akurat. Ini sangat berguna bagi para pelancong yang ingin mengetahui nilai tukar saat berbelanja di luar negeri, pebisnis yang melakukan transaksi internasional, atau siapa pun yang ingin memantau fluktuasi kurs mata uang secara *real-time*.</p>
+                    <a href="https://currency.vinnesia.my.id" target="_blank" class="btn-link">
                         Kunjungi Tool →
                     </a>
                 </div>
 
-                <!-- Kartu Tool: Markdown to HTML Converter -->
+                <!-- Kartu Tool: Pembuat QR Code -->
                 <div class="tool-card">
-                    <h3 class="text-2xl font-semibold text-purple-300 mb-3">Markdown to HTML Converter</h3>
-                    <p class="text-gray-300 mb-4">Ubah teks Markdown Anda menjadi HTML yang rapi dan siap publikasi dalam hitungan detik. Tool ini sangat berguna bagi penulis, blogger, dan pengembang yang sering bekerja dengan Markdown dan membutuhkan konversi cepat ke format web standar. Sederhanakan alur kerja penulisan konten Anda.</p>
-                    <a href="https://toolsvin.vinnesia.my.id/markdown-to-html.html" target="_blank" class="btn-link">
+                    <h3 class="text-2xl font-semibold text-purple-300 mb-3">Pembuat QR Code</h3>
+                    <p class="text-gray-300 mb-4">Dengan Pembuat QR Code Vinnesia, Anda dapat dengan mudah membuat kode QR kustom untuk berbagai keperluan. Misalnya, Anda bisa membuat QR Code untuk tautan situs web, informasi kontak (vCard), atau teks biasa, yang kemudian dapat dipindai dengan cepat oleh *smartphone* untuk akses instan. Tool ini ideal untuk materi pemasaran, kartu nama digital, atau berbagi informasi dengan cara yang modern dan efisien.</p>
+                    <a href="https://qr.vinnesia.my.id" target="_blank" class="btn-link">
                         Kunjungi Tool →
                     </a>
                 </div>
 
-                <!-- Kartu Tool: HTML Entity Encoder/Decoder -->
+                <!-- Kartu Tool: Tools Lainnya (Subdomain 3) -->
                 <div class="tool-card col-span-1 md:col-span-2 mx-auto max-w-md">
-                    <h3 class="text-2xl font-semibold text-purple-300 mb-3">HTML Entity Encoder/Decoder</h3>
-                    <p class="text-gray-300 mb-4">Amankan dan tampilkan karakter khusus dalam HTML Anda dengan mudah. Encoder akan mengubah karakter menjadi entitas HTML untuk mencegah masalah rendering atau injeksi, sementara decoder akan mengembalikan entitas menjadi karakter aslinya. Penting untuk integritas data dan keamanan web.</p>
-                    <a href="https://toolsvin.vinnesia.my.id/html-entity.html" target="_blank" class="btn-link">
+                    <h3 class="text-2xl font-semibold text-purple-300 mb-3">Tools Lainnya</h3>
+                    <p class="text-gray-300 mb-4">Subdomain 'Tools Lainnya' adalah gerbang Anda menuju berbagai *tool* digital tambahan yang terus kami kembangkan dan perbarui. Di sini, Anda akan menemukan beragam utilitas yang dirancang untuk membantu berbagai aspek kehidupan digital Anda, mulai dari pengolahan teks hingga manajemen data sederhana. Kami berkomitmen untuk terus memperluas koleksi *tools* kami berdasarkan umpan balik pengguna dan tren teknologi terkini.</p>
+                    <a href="https://tools.vinnesia.my.id" target="_blank" class="btn-link">
                         Kunjungi Tool →
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Bagian FAQ Singkat -->
-        <section class="mb-12 bg-gray-800 p-6 rounded-xl shadow-lg">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-400 mb-8">Pertanyaan Umum (FAQ)</h2>
-            <div class="space-y-4">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Apa itu VIN NESIA?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        VIN NESIA adalah platform online yang menyediakan berbagai tools digital gratis dan bermanfaat untuk membantu kebutuhan pengembang dan pengguna umum.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Apakah semua tools di VIN NESIA gratis?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Ya, semua tools yang tersedia di VIN NESIA dapat digunakan secara gratis tanpa biaya tersembunyi atau langganan.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Apakah data saya aman saat menggunakan tools ini?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Kami sangat menjaga privasi dan keamanan data Anda. Tools kami dirancang untuk memproses data di sisi klien jika memungkinkan, dan kami tidak menyimpan informasi pribadi sensitif. Silakan baca Kebijakan Privasi kami untuk detail lebih lanjut.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        <span>Bagaimana cara menghubungi tim VIN NESIA?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Anda dapat menghubungi kami melalui email di vin.nesiaa.id@gmail.com atau melalui Instagram kami di @Vin.nesia.id.
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bagian Informasi Penting (Navigasi Footer) -->
+        <!-- Bagian Informasi Penting (Navigasi) -->
         <section class="mb-12 text-center bg-gray-800 p-6 rounded-xl shadow-lg">
             <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6">Informasi Penting</h2>
             <div class="flex flex-wrap justify-center gap-4 text-lg">
-                <a href="privacy.html" class="nav-link font-medium transition duration-300">Kebijakan Privasi</a>
-                <a href="terms.html" class="nav-link font-medium transition duration-300">Terms of Service</a>
-                <a href="about.html" class="nav-link font-medium transition duration-300">Tentang Kami</a>
-                <a href="contact.html" class="nav-link font-medium transition duration-300">Kontak Kami</a>
+                <a href="#privacy-policy" class="nav-link font-medium transition duration-300" onclick="showSection('privacy-policy')">Kebijakan Privasi</a>
+                <a href="#terms-of-service" class="nav-link font-medium transition duration-300" onclick="showSection('terms-of-service')">Terms of Service</a>
+                <a href="#about-us" class="nav-link font-medium transition duration-300" onclick="showSection('about-us')">Tentang Kami</a>
+                <a href="#contact-us" class="nav-link font-medium transition duration-300" onclick="showSection('contact-us')">Kontak Kami</a>
             </div>
+        </section>
+
+        <!-- Bagian Konten Detail (Tersembunyi, akan ditampilkan dengan JS) -->
+        <section id="privacy-policy" class="content-section">
+            <h2 class="text-3xl font-bold text-purple-300 mb-4">Kebijakan Privasi Vinnesia</h2>
+            <p class="text-gray-300 mb-4">
+                Kebijakan Privasi ini menjelaskan bagaimana Vinnesia mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi Anda saat Anda menggunakan situs web dan layanan kami. Kami berkomitmen penuh untuk melindungi privasi pengguna kami dan mematuhi peraturan perundang-undangan yang berlaku di Republik Indonesia terkait perlindungan data pribadi.
+            </p>
+            <p class="text-gray-300 mb-4">
+                Kami mengumpulkan data non-pribadi secara otomatis, seperti alamat IP anonim, jenis peramban, sistem operasi, preferensi bahasa, halaman yang dikunjungi, dan waktu akses, untuk tujuan analitik dan peningkatan kualitas layanan. Data ini digunakan untuk memahami tren penggunaan, mengelola situs, melacak pergerakan pengguna, dan mengumpulkan informasi demografis secara agregat. Informasi ini tidak dapat digunakan untuk mengidentifikasi individu secara pribadi.
+            </p>
+            <p class="text-gray-300 mb-4">
+                Vinnesia tidak mengumpulkan informasi pribadi yang sensitif tanpa persetujuan eksplisit Anda. Jika Anda memilih untuk memberikan informasi pribadi (misalnya melalui formulir kontak), informasi tersebut akan digunakan semata-mata untuk tujuan yang Anda setujui. Kami tidak akan menjual, menyewakan, atau membagikan informasi pribadi Anda kepada pihak ketiga tanpa izin Anda, kecuali diwajibkan oleh hukum atau untuk melindungi hak dan properti Vinnesia.
+            </p>
+            <p class="text-gray-300">
+                Dengan menggunakan layanan Vinnesia, Anda dianggap telah memahami dan menyetujui praktik pengumpulan dan penggunaan informasi sebagaimana diuraikan dalam Kebijakan Privasi ini. Kami berhak untuk memperbarui Kebijakan Privasi ini dari waktu ke waktu, dan setiap perubahan akan dipublikasikan di halaman ini. Kami mendorong Anda untuk meninjau Kebijakan Privasi ini secara berkala.
+            </p>
+            <button onclick="hideAllSections()" class="btn-link mt-6">Tutup</button>
+        </section>
+
+        <section id="terms-of-service" class="content-section">
+            <h2 class="text-3xl font-bold text-purple-300 mb-4">Terms of Service Vinnesia</h2>
+            <p class="text-gray-300 mb-4">
+                Selamat datang di Vinnesia. Dengan mengakses atau menggunakan situs web dan layanan kami, Anda secara tegas menyatakan persetujuan Anda untuk terikat oleh Syarat dan Ketentuan Layanan (Terms of Service) ini. Dokumen ini merupakan perjanjian yang sah antara Anda sebagai pengguna dan Vinnesia. Harap baca seluruh ketentuan ini dengan cermat sebelum melanjutkan penggunaan layanan kami.
+            </p>
+            <p class="text-gray-300 mb-4">
+                Layanan yang disediakan oleh Vinnesia, termasuk namun tidak terbatas pada *tools* konversi mata uang dan pembuat QR Code, ditawarkan secara gratis untuk penggunaan pribadi dan non-komersial. Anda setuju untuk menggunakan layanan kami hanya untuk tujuan yang sah dan sesuai dengan semua hukum dan peraturan yang berlaku di Republik Indonesia. Penggunaan layanan untuk tujuan ilegal, melanggar hak cipta, atau merugikan pihak lain sangat dilarang.
+            </p>
+            <p class="text-gray-300 mb-4">
+                Vinnesia berhak untuk mengubah, menangguhkan, atau menghentikan layanan apa pun, atau bagian darinya, kapan saja tanpa pemberitahuan sebelumnya. Kami tidak bertanggung jawab atas kerugian atau kerusakan yang mungkin timbul dari perubahan, penangguhan, atau penghentian layanan tersebut. Meskipun kami berupaya keras untuk menjaga akurasi dan ketersediaan *tools* kami, Vinnesia tidak memberikan jaminan tersurat maupun tersirat mengenai keandalan, akurasi, atau kesesuaian untuk tujuan tertentu.
+            </p>
+            <p class="text-gray-300">
+                Anda bertanggung jawab penuh atas konten yang Anda masukkan ke dalam *tools* kami dan hasil yang Anda peroleh dari penggunaannya. Vinnesia tidak bertanggung jawab atas kerugian langsung, tidak langsung, insidental, konsekuensial, atau hukuman yang timbul dari penggunaan atau ketidakmampuan menggunakan layanan kami. Dengan terus menggunakan layanan Vinnesia, Anda dianggap telah membaca, memahami, dan menyetujui semua ketentuan yang tercantum dalam Terms of Service ini.
+            </p>
+            <button onclick="hideAllSections()" class="btn-link mt-6">Tutup</button>
+        </section>
+
+        <section id="about-us" class="content-section">
+            <h2 class="text-3xl font-bold text-purple-300 mb-4">Tentang Kami - Vinnesia</h2>
+            <p class="text-gray-300 mb-4">
+                Vinnesia adalah sebuah platform digital yang didirikan dengan visi untuk menyediakan akses universal terhadap *tools* *online* yang fungsional, cepat, dan sepenuhnya gratis. Kami adalah tim pengembang yang berdedikasi dan inovatif, berkomitmen untuk menyederhanakan berbagai tugas digital sehari-hari bagi individu dan profesional di seluruh dunia. Filosofi kami berpusat pada pemberdayaan pengguna melalui teknologi yang mudah diakses dan tanpa hambatan finansial.
+            </p>
+            <p class="text-gray-300 mb-4">
+                Misi utama Vinnesia adalah membangun ekosistem *tools* digital yang komprehensif dan andal, yang secara konsisten memenuhi kebutuhan pengguna yang terus berkembang. Kami berupaya untuk menjadi sumber daya terpercaya bagi siapa saja yang mencari solusi efisien untuk konversi data, pembuatan aset digital, dan berbagai utilitas lainnya. Setiap *tool* yang kami kembangkan melalui proses riset dan pengembangan yang cermat, memastikan kualitas, keamanan, dan pengalaman pengguna yang optimal.
+            </p>
+            <p class="text-gray-300">
+                Kami sangat menghargai umpan balik dari komunitas pengguna kami. Saran, ide, dan kritik Anda adalah pendorong utama inovasi kami. Vinnesia akan terus berupaya untuk memperluas portofolio *tools* kami dan meningkatkan kualitas layanan yang ada, dengan tujuan untuk selalu menjadi mitra digital terdepan Anda. Terima kasih telah menjadi bagian dari perjalanan Vinnesia.
+            </p>
+            <button onclick="hideAllSections()" class="btn-link mt-6">Tutup</button>
+        </section>
+
+        <section id="contact-us" class="content-section">
+            <h2 class="text-3xl font-bold text-purple-300 mb-4">Kontak Kami</h2>
+            <p class="text-gray-300 mb-4">
+                Kami sangat menghargai komunikasi dengan pengguna kami. Jika Anda memiliki pertanyaan, memerlukan dukungan teknis, ingin menyampaikan saran untuk pengembangan *tool* baru, atau tertarik untuk berkolaborasi, jangan ragu untuk menghubungi tim Vinnesia.
+            </p>
+            <div class="flex flex-col items-start gap-3 text-lg">
+                <p class="text-gray-300">
+                    <span class="font-semibold">Email:</span>
+                    <a href="mailto:Vin.nesiaa.id@gmail.com" class="nav-link ml-2">Vin.nesiaa.id@gmail.com</a>
+                </p>
+                <p class="text-gray-300">
+                    <span class="font-semibold">Instagram:</span>
+                    <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" class="nav-link ml-2">@Vin.nesia.id</a>
+                </p>
+            </div>
+            <p class="text-gray-300 mt-6">
+                Tim kami akan berusaha merespons setiap pertanyaan dan masukan Anda secepat mungkin. Kami berkomitmen untuk memberikan layanan terbaik dan dukungan yang responsif kepada seluruh pengguna Vinnesia.
+            </p>
+            <button onclick="hideAllSections()" class="btn-link mt-6">Tutup</button>
         </section>
 
         <!-- Bagian Hubungi Kami (Footer) -->
@@ -287,36 +218,19 @@
                 Jika Anda memiliki pertanyaan, masukan, atau ingin berkolaborasi, jangan ragu untuk menghubungi kami melalui:
             </p>
             <div class="flex flex-col items-center gap-3">
-                <a href="mailto:vin.nesiaa.id@gmail.com" class="nav-link font-medium text-xl transition duration-300">
-                    Email: vin.nesiaa.id@gmail.com
+                <a href="mailto:Vin.nesiaa.id@gmail.com" class="nav-link font-medium text-xl transition duration-300">
+                    Email: Vin.nesiaa.id@gmail.com
                 </a>
                 <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" class="nav-link font-medium text-xl transition duration-300">
                     Instagram: @Vin.nesia.id
                 </a>
             </div>
-            <p class="text-gray-500 text-sm mt-8">&copy; 2025 VIN NESIA. Semua Hak Dilindungi.</p>
+            <p class="text-gray-500 text-sm mt-8">&copy; 2025 Vinnesia. Semua Hak Dilindungi.</p>
         </footer>
 
     </div>
 
-    <script>
-        // Fungsi untuk mengaktifkan/menonaktifkan jawaban FAQ
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('.faq-icon');
-            if (answer.classList.contains('active')) {
-                answer.classList.remove('active');
-                element.classList.remove('active');
-            } else {
-                // Opsional: Tutup semua FAQ lain sebelum membuka yang baru
-                document.querySelectorAll('.faq-answer.active').forEach(item => {
-                    item.classList.remove('active');
-                    item.previousElementSibling.classList.remove('active');
-                });
-                answer.classList.add('active');
-                element.classList.add('active');
-            }
-        }
-    </script>
+    <!-- Menghubungkan ke file JavaScript eksternal Anda -->
+    <script src="script.js"></script>
 </body>
 </html>
