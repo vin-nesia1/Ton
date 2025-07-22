@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to HTML Converter - VIN NESIA Tools</title>
+    <meta name="description" content="Konversi teks Markdown Anda menjadi HTML dengan cepat dan mudah menggunakan tool online gratis VIN NESIA.">
+    <meta name="keywords" content="markdown to html, markdown converter, html converter, online markdown, web tool">
+    <link rel="canonical" href="https://toolsvin.vinnesia.my.id/markdown-to-html.html">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CDN untuk Marked.js (Markdown parser) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.0/marked.min.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #1E212B; color: #E0E6F0; }
+        .btn-tool {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            background-color: #8B5CF6;
+            color: white;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            margin: 0.25rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-tool:hover { background-color: #7C3AED; }
+        .logo-text { font-family: 'Inter', sans-serif; font-weight: 800; color: #C4B5FD; font-size: 1.875rem; line-height: 2.25rem; }
+        .logo-img { width: 40px; height: 40px; margin-right: 0.75rem; border-radius: 0.375rem; }
+        .nav-link { color: #A78BFA; transition: color 0.3s ease; }
+        .nav-link:hover { color: #C4B5FD; }
+        textarea {
+            background-color: #2A2F3B;
+            border: 1px solid #4A5568;
+            color: #E0E6F0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            resize: vertical;
+            font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        .output-preview {
+            background-color: #2A2F3B;
+            border: 1px solid #4A5568;
+            color: #E0E6F0;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            min-height: 15rem; /* Same as textarea rows */
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        <header class="flex items-center justify-start mb-8 md:mb-12">
+            <a href="https://www.vinnesia.my.id" class="flex items-center hover:opacity-80 transition duration-300">
+                <img src="https://placehold.co/40x40/8B5CF6/ffffff?text=VN" alt="Logo VIN NESIA" class="logo-img">
+                <span class="logo-text">VIN NESIA</span>
+            </a>
+        </header>
+
+        <main class="bg-gray-800 p-6 rounded-xl shadow-lg">
+            <h1 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 text-center">Markdown to HTML Converter</h1>
+            <p class="text-gray-300 mb-6 text-center">Ubah teks Markdown Anda menjadi HTML yang siap digunakan.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="markdownInput" class="block text-gray-400 text-sm font-bold mb-2">Input Markdown:</label>
+                    <textarea id="markdownInput" rows="15" class="w-full" placeholder="Masukkan teks Markdown di sini..."></textarea>
+                </div>
+                <div>
+                    <label for="htmlOutput" class="block text-gray-400 text-sm font-bold mb-2">Output HTML:</label>
+                    <textarea id="htmlOutput" rows="15" class="w-full" readonly placeholder="Output HTML akan muncul di sini..."></textarea>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center mt-6">
+                <button id="convertBtn" class="btn-tool">Convert to HTML</button>
+                <button id="clearBtn" class="btn-tool bg-red-600 hover:bg-red-700">Clear</button>
+                <button id="copyBtn" class="btn-tool bg-blue-600 hover:bg-blue-700">Copy HTML</button>
+            </div>
+        </main>
+
+        <footer class="text-center py-8 bg-gray-800 p-6 rounded-xl shadow-lg mt-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6">Hubungi Kami</h2>
+            <p class="text-lg text-gray-300 mb-4">
+                Jika Anda memiliki pertanyaan, masukan, atau ingin berkolaborasi, jangan ragu untuk menghubungi kami melalui:
+            </p>
+            <div class="flex flex-col items-center gap-3">
+                <a href="mailto:vin.nesiaa.id@gmail.com" class="nav-link font-medium text-xl transition duration-300">
+                    Email: vin.nesiaa.id@gmail.com
+                </a>
+                <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" class="nav-link font-medium text-xl transition duration-300">
+                    Instagram: @Vin.nesia.id
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm mt-8">&copy; 2025 VIN NESIA. Semua Hak Dilindungi.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const markdownInput = document.getElementById('markdownInput');
+            const htmlOutput = document.getElementById('htmlOutput');
+            const convertBtn = document.getElementById('convertBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const copyBtn = document.getElementById('copyBtn');
+
+            function showMessage(message, type = 'info') {
+                const messageBox = document.createElement('div');
+                messageBox.textContent = message;
+                messageBox.className = `fixed bottom-4 right-4 p-3 rounded-lg shadow-lg text-white z-50`;
+                if (type === 'success') {
+                    messageBox.classList.add('bg-green-500');
+                } else if (type === 'error') {
+                    messageBox.classList.add('bg-red-500');
+                } else {
+                    messageBox.classList.add('bg-blue-500');
+                }
+                document.body.appendChild(messageBox);
+                setTimeout(() => {
+                    messageBox.remove();
+                }, 3000);
+            }
+
+            convertBtn.addEventListener('click', () => {
+                const markdownText = markdownInput.value;
+                if (markdownText.trim() === '') {
+                    showMessage('Please enter Markdown text to convert.', 'info');
+                    return;
+                }
+                try {
+                    // Menggunakan marked.js untuk mengonversi Markdown ke HTML
+                    htmlOutput.value = marked.parse(markdownText);
+                } catch (e) {
+                    showMessage('Error converting Markdown: ' + e.message, 'error');
+                }
+            });
+
+            clearBtn.addEventListener('click', () => {
+                markdownInput.value = '';
+                htmlOutput.value = '';
+                showMessage('Text areas cleared!', 'info');
+            });
+
+            copyBtn.addEventListener('click', () => {
+                if (htmlOutput.value) {
+                    htmlOutput.select();
+                    document.execCommand('copy');
+                    showMessage('HTML output copied to clipboard!', 'success');
+                } else {
+                    showMessage('No HTML to copy!', 'info');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
