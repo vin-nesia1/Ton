@@ -3,181 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Entity Encoder/Decoder - VIN NESIA Tools</title>
-    <meta name="description" content="Encode dan decode entitas HTML dengan mudah menggunakan tool online gratis VIN NESIA. Amankan karakter khusus dalam kode Anda.">
-    <meta name="keywords" content="html entity encoder, html entity decoder, html special characters, html entities, online tool">
+    <title>HTML Entity Encoder & Decoder Online Gratis | VIN NESIA</title>
+    <meta name="description" content="Encode dan Decode karakter khusus menjadi entitas HTML atau sebaliknya dengan tool gratis dari VIN NESIA. Pastikan keamanan dan tampilan HTML Anda. Cepat, aman, dan efisien.">
+    <meta name="keywords" content="html entity encoder, html entity decoder, encode html, decode html, karakter khusus html, aman html, tool html, gratis, online, vin nesia">
     <link rel="canonical" href="https://toolsvin.vinnesia.my.id/html-entity.html">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1E212B; color: #E0E6F0; }
-        .btn-tool {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1E212B;
+            color: #E0E6F0;
+        }
+        .btn {
             padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+        .btn-primary {
             background-color: #8B5CF6;
             color: white;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
-            margin: 0.25rem;
-            border: none;
-            cursor: pointer;
         }
-        .btn-tool:hover { background-color: #7C3AED; }
-        .logo-text { font-family: 'Inter', sans-serif; font-weight: 800; color: #C4B5FD; font-size: 1.875rem; line-height: 2.25rem; }
-        .logo-img { width: 40px; height: 40px; margin-right: 0.75rem; border-radius: 0.375rem; }
-        .nav-link { color: #A78BFA; transition: color 0.3s ease; }
-        .nav-link:hover { color: #C4B5FD; }
+        .btn-primary:hover {
+            background-color: #7C3AED;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: #4B5563;
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: #374151;
+            transform: translateY(-1px);
+        }
         textarea {
             background-color: #2A2F3B;
-            border: 1px solid #4A5568;
+            border: 1px solid #4B5563;
             color: #E0E6F0;
-            padding: 1rem;
-            border-radius: 0.5rem;
             resize: vertical;
-            font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
-            font-size: 0.9rem;
+        }
+        .alert {
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.375rem;
+        }
+        .alert-danger {
+            color: #F8D7DA;
+            background-color: #721C24;
+            border-color: #F5C6CB;
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F8V8Y4XQN4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8KPNLX47L1');
-</script>
 </head>
-<body class="text-gray-200">
-    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
-        <header class="flex items-center justify-start mb-8 md:mb-12">
-            <a href="https://www.vinnesia.my.id" class="flex items-center hover:opacity-80 transition duration-300">
-                <img src="images/logo.png" alt="Logo VIN NESIA" class="logo-img">
-                <span class="logo-text">VIN NESIA</span>
+<body class="text-gray-200 p-4 md:p-8">
+    <div class="container mx-auto max-w-4xl bg-gray-900 p-6 md:p-10 rounded-lg shadow-xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-purple-400 mb-6">
+            HTML Entity Encoder & Decoder
+        </h1>
+        <p class="text-center text-gray-400 mb-8">
+            Ubah karakter khusus menjadi entitas HTML atau kembalikan entitas menjadi karakter aslinya.
+        </p>
+
+        <!-- Fitur Upload File -->
+        <div class="mb-6 bg-gray-800 p-4 rounded-md shadow-inner">
+            <label for="fileInput" class="block text-lg font-semibold text-purple-300 mb-3">Upload File (.html, .css, .json):</label>
+            <input type="file" id="fileInput" accept=".html,.css,.json" onchange="loadFile(event)"
+                   class="block w-full text-sm text-gray-400
+                          file:mr-4 file:py-2 file:px-4
+                          file:rounded-full file:border-0
+                          file:text-sm file:font-semibold
+                          file:bg-purple-50 file:text-purple-700
+                          hover:file:bg-purple-100 cursor-pointer">
+            <p id="fileError" class="text-red-400 text-sm mt-2 hidden"></p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <label for="inputText" class="block text-lg font-semibold text-purple-300 mb-3">Input Teks/HTML:</label>
+                <textarea id="inputText" rows="15" class="w-full p-3 rounded-md focus:ring-2 focus:ring-purple-500"
+                          placeholder="Paste teks atau kode HTML Anda di sini..."></textarea>
+            </div>
+            <div>
+                <label for="outputText" class="block text-lg font-semibold text-purple-300 mb-3">Output Teks/HTML:</label>
+                <textarea id="outputText" rows="15" class="w-full p-3 rounded-md focus:ring-2 focus:ring-purple-500"
+                          placeholder="Hasil akan muncul di sini..." readonly></textarea>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 justify-center mb-8">
+            <button onclick="encodeHtmlEntities()" class="btn btn-primary">
+                <i class="fas fa-angle-double-right mr-2"></i> Encode Entities
+            </button>
+            <button onclick="decodeHtmlEntities()" class="btn btn-secondary">
+                <i class="fas fa-angle-double-left mr-2"></i> Decode Entities
+            </button>
+            <button onclick="clearFields()" class="btn btn-secondary">
+                <i class="fas fa-redo-alt mr-2"></i> Clear
+            </button>
+            <button onclick="copyOutput()" class="btn btn-secondary">
+                <i class="fas fa-copy mr-2"></i> Copy Output
+            </button>
+        </div>
+
+        <!-- Notifikasi untuk Copy -->
+        <div id="copyNotification" class="fixed bottom-5 right-5 bg-green-600 text-white py-2 px-4 rounded-md shadow-lg hidden">
+            Berhasil disalin!
+        </div>
+
+        <div class="text-center mt-8">
+            <a href="https://www.vinnesia.my.id" class="text-purple-300 hover:text-purple-500 transition duration-300">
+                &larr; Kembali ke VIN NESIA
             </a>
-        </header>
-
-        <main class="bg-gray-800 p-6 rounded-xl shadow-lg">
-            <h1 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 text-center">HTML Entity Encoder / Decoder</h1>
-            <p class="text-gray-300 mb-6 text-center">Ubah karakter khusus menjadi entitas HTML atau sebaliknya.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label for="inputText" class="block text-gray-400 text-sm font-bold mb-2">Input Teks:</label>
-                    <textarea id="inputText" rows="15" class="w-full" placeholder="Masukkan teks atau kode di sini..."></textarea>
-                </div>
-                <div>
-                    <label for="outputText" class="block text-gray-400 text-sm font-bold mb-2">Output Teks:</label>
-                    <textarea id="outputText" rows="15" class="w-full" readonly placeholder="Output akan muncul di sini..."></textarea>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap justify-center mt-6">
-                <button id="encodeBtn" class="btn-tool">Encode Entities</button>
-                <button id="decodeBtn" class="btn-tool">Decode Entities</button>
-                <button id="clearBtn" class="btn-tool bg-red-600 hover:bg-red-700">Clear</button>
-                <button id="copyBtn" class="btn-tool bg-blue-600 hover:bg-blue-700">Copy Output</button>
-            </div>
-        </main>
-
-        <footer class="text-center py-8 bg-gray-800 p-6 rounded-xl shadow-lg mt-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6">Hubungi Kami</h2>
-            <p class="text-lg text-gray-300 mb-4">
-                Jika Anda memiliki pertanyaan, masukan, atau ingin berkolaborasi, jangan ragu untuk menghubungi kami melalui:
-            </p>
-            <div class="flex flex-col items-center gap-3">
-                <!-- Email -->
-<a href="mailto:vin.nesiaa.id@gmail.com"
-   class="inline-flex items-center gap-3 text-base font-medium text-purple-400 hover:text-purple-300 transition duration-300">
-   📧 <span>Email: vin.nesiaa.id@gmail.com</span>
-</a>
-
-<!-- Instagram -->
-<a href="https://www.instagram.com/Vin.nesia.id" target="_blank"
-   class="inline-flex items-center gap-3 text-base font-medium text-pink-400 hover:text-pink-300 transition duration-300">
-   📸 <span>Instagram: @Vin.nesia.id</span>
-</a>
-            </div>
-            <p class="text-gray-500 text-sm mt-8">&copy; 2025 VIN NESIA. Semua Hak Dilindungi.</p>
-        </footer>
+        </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        // Fungsi untuk handle upload file
+        function loadFile(event) {
+            const file = event.target.files[0];
+            const fileError = document.getElementById('fileError');
             const inputText = document.getElementById('inputText');
-            const outputText = document.getElementById('outputText');
-            const encodeBtn = document.getElementById('encodeBtn');
-            const decodeBtn = document.getElementById('decodeBtn');
-            const clearBtn = document.getElementById('clearBtn');
-            const copyBtn = document.getElementById('copyBtn');
 
-            function showMessage(message, type = 'info') {
-                const messageBox = document.createElement('div');
-                messageBox.textContent = message;
-                messageBox.className = `fixed bottom-4 right-4 p-3 rounded-lg shadow-lg text-white z-50`;
-                if (type === 'success') {
-                    messageBox.classList.add('bg-green-500');
-                } else if (type === 'error') {
-                    messageBox.classList.add('bg-red-500');
-                } else {
-                    messageBox.classList.add('bg-blue-500');
-                }
-                document.body.appendChild(messageBox);
-                setTimeout(() => {
-                    messageBox.remove();
-                }, 3000);
+            fileError.classList.add('hidden'); // Sembunyikan pesan error sebelumnya
+
+            if (!file) {
+                return; // Tidak ada file yang dipilih
             }
 
-            encodeBtn.addEventListener('click', () => {
-                const text = inputText.value;
-                if (text.trim() === '') {
-                    showMessage('Please enter text to encode.', 'info');
-                    return;
-                }
-                // Menggunakan DOMParser untuk encoding yang aman
-                const div = document.createElement('div');
-                div.textContent = text;
-                outputText.value = div.innerHTML;
-                showMessage('Text encoded to HTML entities!', 'success');
-            });
+            const fileName = file.name;
+            const fileExtension = fileName.split('.').pop().toLowerCase();
 
-            decodeBtn.addEventListener('click', () => {
-                const text = inputText.value;
-                if (text.trim() === '') {
-                    showMessage('Please enter text to decode.', 'info');
-                    return;
-                }
-                // Menggunakan DOMParser untuk decoding yang aman
-                const div = document.createElement('div');
-                div.innerHTML = text;
-                outputText.value = div.textContent;
-                showMessage('HTML entities decoded to text!', 'success');
-            });
+            // Validasi ekstensi file
+            const allowedExtensions = ['html', 'css', 'json'];
+            if (!allowedExtensions.includes(fileExtension)) {
+                fileError.textContent = 'Hanya file .html, .css, atau .json yang diizinkan!';
+                fileError.classList.remove('hidden');
+                inputText.value = ''; // Kosongkan input jika file tidak valid
+                event.target.value = ''; // Reset input file
+                return;
+            }
 
-            clearBtn.addEventListener('click', () => {
-                inputText.value = '';
-                outputText.value = '';
-                showMessage('Text areas cleared!', 'info');
-            });
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                inputText.value = e.target.result;
+            };
+            reader.onerror = (e) => {
+                fileError.textContent = 'Gagal membaca file. Silakan coba lagi.';
+                fileError.classList.remove('hidden');
+            };
+            reader.readAsText(file);
+        }
 
-            copyBtn.addEventListener('click', () => {
-                if (outputText.value) {
-                    outputText.select();
-                    document.execCommand('copy');
-                    showMessage('Output copied to clipboard!', 'success');
+        function encodeHtmlEntities() {
+            const inputText = document.getElementById('inputText').value;
+            let outputText = '';
+            for (let i = 0; i < inputText.length; i++) {
+                const char = inputText.charCodeAt(i);
+                if (char > 127 || char === 34 || char === 39 || char === 60 || char === 62 || char === 38) {
+                    // Encode characters outside ASCII range, quotes, <, >, &
+                    outputText += '&#' + char + ';';
                 } else {
-                    showMessage('No output to copy!', 'info');
+                    outputText += inputText.charAt(i);
                 }
-            });
-        });
+            }
+            document.getElementById('outputText').value = outputText;
+        }
+
+        function decodeHtmlEntities() {
+            const inputText = document.getElementById('inputText').value;
+            // Membuat elemen DOM sementara untuk melakukan decoding
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = inputText;
+            document.getElementById('outputText').value = tempDiv.innerText || tempDiv.textContent;
+        }
+
+        function clearFields() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('outputText').value = '';
+            document.getElementById('fileInput').value = ''; // Reset input file
+            document.getElementById('fileError').classList.add('hidden'); // Sembunyikan pesan error
+        }
+
+        function copyOutput() {
+            const outputText = document.getElementById('outputText');
+            outputText.select();
+            document.execCommand('copy');
+            const notification = document.getElementById('copyNotification');
+            notification.classList.remove('hidden');
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 2000);
+        }
     </script>
 </body>
 </html>
