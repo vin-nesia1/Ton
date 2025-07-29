@@ -1,0 +1,16 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:path",
+      "destination": "/:path.html"
+    }
+  ],
+  "redirects": [],
+  "headers": [],
+  "trailingSlash": false
+}
